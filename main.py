@@ -12,21 +12,10 @@ from dict import *
 
 client = commands.Bot(command_prefix = "-")
 client.remove_command('help')
-status = ['COONS', 'COOOOOOONS']
 
-async def change_status():
-    await client.wait_until_ready()
-    msgs = cycle(status)
-    
-    while not client.is_closed:
-        current_status = next(msgs)
-        await client.change_presence(game=discord.Game(name=current_status))
-        await asyncio.sleep(2)
-           
-        
+                
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name='Online!'))
     print("Bot is ready")
 
 @client.event
