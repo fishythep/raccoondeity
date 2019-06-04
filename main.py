@@ -7,7 +7,7 @@ import random
 from random import *
 import os
 
-#
+
 
 client = discord.Client()
 status = ['COONS', 'COOOOOOONS']
