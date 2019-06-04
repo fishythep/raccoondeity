@@ -51,6 +51,7 @@ async def on_ready():
 async def on_message(message):
     mess = message.content.lower()
     auth = message.author
+    channel = message.channel
     rnd = randint(0,100)
     if not auth.id == "585341561345409044":
         if rnd in range(10):
