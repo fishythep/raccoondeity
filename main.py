@@ -6,6 +6,9 @@ import time
 import random
 import os
 
+import coonsdict
+from coonsdict import *
+
 client = commands.Bot(command_prefix = "-")
 client.remove_command('help')
 status = ['COONS', 'COOOOOOONS']
