@@ -7,7 +7,7 @@ import random
 from random import *
 import os
 
-
+#
 
 client = commands.Bot(command_prefix = "-")
 client.remove_command('help')
