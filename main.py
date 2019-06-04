@@ -9,7 +9,7 @@ import os
 
 #
 
-client = commands.Bot(command_prefix = "-")
+client = discord.Client()
 client.remove_command('help')
 status = ['COONS', 'COOOOOOONS']
 
@@ -53,7 +53,8 @@ async def on_message(message):
     auth = message.author
     channel = message.channel
     rnd = randint(0,100)
-    if not auth.id == "585341561345409044":
+    if auth == client.user: return
+    else:
         if rnd in range(10):
             rnd = randint(0,len(coonsdict) - 1)
             if message.content.find('EMOJI_NAME'):
