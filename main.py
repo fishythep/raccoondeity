@@ -60,7 +60,7 @@ async def on_message(message):
                     if x.id == coonsdict[coons[rnd]]:
                         await client.add_reaction(message, x)
         if "hi" in mess:
-            await client.send_message(message.channel, "hi")
+            await channel.send("hi")
 
 async def get_reaction(message,i):
     index = randint(0,len(reactionsdict[inmsg[i]]) - 1)
