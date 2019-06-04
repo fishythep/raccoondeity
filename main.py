@@ -41,7 +41,7 @@ async def change_status():
         await client.change_presence(activity=discord.Activity(name=current_status))
         await asyncio.sleep(2)
            
-        
+  #      
 @client.event
 async def on_ready():
     await client.change_presence(activity=discord.Activity(name='Online!'))
