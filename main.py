@@ -7,15 +7,44 @@ import random
 from random import *
 import os
 
-import dict
-from dict import *
+
 
 client = commands.Bot(command_prefix = "-")
 client.remove_command('help')
+status = ['COONS', 'COOOOOOONS']
 
-                
+coons = [":1_:",":2_:",":3_:",":4_:",":5_:",":6_:",":7_:",":8_:",":7_:",":8_:",":9_:",":10:",":11:",":12:"]
+
+coonsdict = {
+  ":1_:": "585367557674893313",
+  ":2_:": "585369785446039572",
+  ":3_:": "585369809395384320",
+  ":4_:": "585369829826101248",
+  ":5_:": "585369847974723584",
+  ":6_:": "585369865632612352",
+  ":7_:": "585369881885802497",
+  ":8_:": "585369903851241482",
+  ":9_:": "585369922922741760",
+  ":10:": "585369941545451530",
+  ":11:": "585369960646443018",
+  ":12:": "585369979638251524"
+}
+
+
+
+async def change_status():
+    await client.wait_until_ready()
+    msgs = cycle(status)
+    
+    while not client.is_closed:
+        current_status = next(msgs)
+        await client.change_presence(game=discord.Game(name=current_status))
+        await asyncio.sleep(2)
+           
+        
 @client.event
 async def on_ready():
+    await client.change_presence(game=discord.Game(name='Online!'))
     print("Bot is ready")
 
 @client.event
@@ -69,8 +98,6 @@ async def say(*args):
     await client.say(output)
     
     
-client.run(os.environ['BOT_TOKEN'])    
-
-
-
-#tbd
+    
+client.loop.create_task(change_status())
+client.run("NTg1MzQxNTYxMzQ1NDA5MDQ0.XPYQsA.AwRxKpIBUn5J_A0f89nU0DfVbNs")
