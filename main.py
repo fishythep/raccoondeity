@@ -38,13 +38,13 @@ async def change_status():
     
     while not client.is_closed:
         current_status = next(msgs)
-        await client.change_presence(game=discord.activities(name=current_status))
+        await client.change_presence(game=discord.Activity(name=current_status))
         await asyncio.sleep(2)
            
         
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.activities(name='Online!'))
+    await client.change_presence(game=discord.Activity(name='Online!'))
     print("Bot is ready")
 
 @client.event
