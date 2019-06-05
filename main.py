@@ -6,7 +6,6 @@ import time
 import random
 from random import *
 import os
-import requests
 
 import dict
 from dict import *
