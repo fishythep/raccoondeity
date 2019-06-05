@@ -6,6 +6,8 @@ import time
 import random
 from random import *
 import os
+import requests
+
 
 
 
@@ -51,10 +53,10 @@ async def on_message(message):
     mess = message.content.lower()
     auth = message.author
     channel = message.channel
-    rnd = randint(0,100)
+    rnd = randint(1,10)
     if auth == client.user: return
     else:
-        if rnd in range(10):
+        if rnd == 1:
             rnd = randint(0,len(coonsdict) - 1)
             await message.add_reaction(coonsdict[coons[rnd]])
         if "hi" in mess:
