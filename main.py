@@ -40,8 +40,7 @@ async def on_message(message):
         if rnd == 1:
             rnd = randint(0,len(coonsdict) - 1)
             await message.add_reaction(coonsdict[coons[rnd]])
-        if "hi" in mess:
-            await channel.send("hi")
+        
             
 client.loop.create_task(change_status())
 client.run(os.environ['BOT_TOKEN'])
